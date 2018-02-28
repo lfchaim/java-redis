@@ -15,7 +15,7 @@
 ```
 
 ```mermaid
-sequenceDiagram
-  Client->BalanceController
+  sequenceDiagram
+    Client->BalanceController
   
 ```

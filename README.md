@@ -3,19 +3,20 @@
 ```mermaid
 %% Example of sequence diagram
   sequenceDiagram
-    Alice->>Bob: Hello Bob, how are you?
-    alt is sick
-    Bob->>Alice: Not so good :(
-    else is well
-    Bob->>Alice: Feeling fresh like a daisy
+    participant Client
+    participant BalanceController
+    participant StatementService
+    Client->>+BalanceController: transaction(transactionType, stardDate, endDate)
+    BalanceController->>+BalanceController: gera NSU
+    BalanceController->>+BalanceController: atribui channel = "06"
+    BalanceController->>+BalanceController: verifica transactionType
+    BalanceController->>+StatementService: accountStatement
+    loop diference de vazio
+      StatementService->>+ACIBUYCOServContasPortTypeHTTP: listaExtratoCuenta
+      ACIBUYCOServContasPortTypeHTTP->>-StatementService: ListaExtratoCuentaResponse
     end
-    opt Extra response
-    Bob->>Alice: Thanks for asking
-    end
-```
-
-```mermaid
-  sequenceDiagram
-    Client->BalanceController
-  
+    activate StatementService
+	StatementService->>-BalanceController: StatementsResponseDTO
+	activate BalanceController
+	BalanceController->>-Client: StatementsResponseDTO
 ```

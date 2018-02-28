@@ -13,3 +13,9 @@
     Bob->>Alice: Thanks for asking
     end
 ```
+
+```mermaid
+sequenceDiagram
+  Client->BalanceController
+  
+```

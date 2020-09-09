@@ -1,5 +1,5 @@
 # java-redis
-
+Para visualizar o diagrama de sequência abaixo, instale a extensão [mermaid-diagrams] (https://github.com/Redisrupt/mermaid-diagrams)
 ```mermaid
 %% Example of sequence diagram
   sequenceDiagram
